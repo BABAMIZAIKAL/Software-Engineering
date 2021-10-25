@@ -1,0 +1,97 @@
+<body>
+    {% include "navigation.html" %}
+    <h1> Homework 2</h1>
+    <style>
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(45deg, #49a09d, #5f2c82);
+            font-family: sans-serif;
+            font-weight: 100;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        table {
+            width: 800px;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        th,
+        td {
+            padding: 15px;
+            background-color: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        thead {
+            th {
+                background-color: #55608f;
+            }
+        }
+
+        tbody {
+            tr {
+                &:hover {
+                    background-color: rgba(255,255,255,0.3);
+                }
+            }
+            td {
+                position: relative;
+                &:hover {
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: -9999px;
+                        bottom: -9999px;
+                        background-color: rgba(255,255,255,0.2);
+                        z-index: -1;
+                    }
+                }
+            }
+        }
+    </style>
+    <table style="height: 335px; width: 700px;">
+        <tbody>
+            <tr>
+            <td style="width: 139px;">&nbsp;</td>
+            <td style="width: 139.125px;" colspan="3">&nbsp;</td>
+            <td style="width: 139px;">&nbsp;</td>
+            </tr>
+            <tr>
+            <td style="width: 139px; text-align: center;"><strong>Time</strong></td>
+            <td style="width: 139.125px; text-align: center;"><strong>Destination</strong></td>
+            <td style="width: 137.875px; text-align: center;"><strong>Train</strong></td>
+            <td style="width: 139px; text-align: center;"><strong>Track</strong></td>
+            <td style="width: 139px; text-align: center;"><strong>Status</strong></td>
+            </tr>
+    {% for i in response %}
+
+        <tr>
+        <td style="width: 139px;">{{i.time}}</td>
+        <td style="width: 139.125px;">{{i.destination}}</td>
+        <td style="width: 137.875px;">{{i.vehicle}}</td>
+        <td style="width: 139px;">{{i.track}}</td>
+        <td style="width: 139px;">{{i.status}}</td>
+        </tr>
+
+    {% endfor %}
+        </tbody>
+    </table>
+</body>
