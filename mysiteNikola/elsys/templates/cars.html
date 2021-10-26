@@ -1,0 +1,16 @@
+nes (4 sloc)  76 Bytes
+  
+<body>
+    {% include "navigation.html" %}
+    <div>
+        {% for car in cars %}
+            <li>
+                Brand: {{car.brand}}<br>
+                Model: {{car.model}}<br>
+                Color: {{car.color}}<br>
+                Made: {{car.made}}<br>
+                Description: {{car.Description}}<br>
+            </li>
+            {% endfor %}
+    </div>
+</body>

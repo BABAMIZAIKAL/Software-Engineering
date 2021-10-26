@@ -1,0 +1,23 @@
+<body>
+  <table style="height: 350px; width: 700px;">
+      <tbody>
+          <tr>
+            <td><strong>Time</strong></td>
+            <td><strong>Destination</strong></td>
+            <td><strong>Train</strong></td>
+            <td><strong>Track</strong></td>
+            <td><strong>Status</strong></td>
+          </tr>
+      {% for i in data %}
+          <tr>
+            <td style="width: 139px;">{{i.time}}</td>
+            <td style="width: 139.125px;">{{i.destination}}</td>
+            <td style="width: 137.875px;">{{i.train}}</td>
+            <td style="width: 139px;">{{i.track}}</td>
+            <td style="width: 139px;">{{i.status}}</td>
+          </tr>
+
+      {% endfor %}
+      </tbody>
+  </table>
+</body>
